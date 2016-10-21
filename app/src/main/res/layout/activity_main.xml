@@ -8,6 +8,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/contact_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -21,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/default_margin"
-            android:layout_toLeftOf="@+id/phone_number_editText"
             android:enabled="false"
             android:padding="@dimen/default_margin"
             android:text="+91" />
@@ -29,9 +29,10 @@
         <!-- Phone Number -->
         <EditText
             android:id="@+id/phone_number_editText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/country_editText"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/default_margin"
             android:gravity="center"
             android:hint="@string/phone_number"
@@ -39,14 +40,14 @@
             android:maxLength="10"
             android:padding="@dimen/default_margin" />
 
-        <ImageView
-            android:id="@+id/select_imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/dialogue_margin"
-            android:layout_toRightOf="@+id/phone_number_editText"
-            android:src="@drawable/select" />
-
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/select_imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/contact_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dialogue_margin"
+        android:src="@drawable/select" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.roysters.connectyou;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -52,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AuthCallback authCallback = new AuthCallback() {
         @Override
         public void success(DigitsSession session, String phoneNumber) {
-
+            Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         @Override
